@@ -2692,118 +2692,215 @@ body {
     </div>
 
   
+
     <!-- ══════════════════ ABBY ARC PIPELINE ══════════════════ -->
     <div class="tab-panel" id="panel-abby">
       <div class="panel-title">Abby's ARC / FBO Floor List</div>
-      <div class="panel-sub">Sourced from Abby's prospect tracker · Bold = current client · ⚠ = win-back (previously churned) · Status as of March 2026</div>
+      <div class="panel-sub">All 210 accounts from Abby's tracker · All exhibiting at SDC2026 · Sorted by priority status · Click any row to add a note</div>
 
-      <div class="track-box blue-track">
+      <div class="track-box blue-track" style="margin-bottom:16px;">
         <div class="track-box-label">Context for the Team</div>
-        <p>Abby owns the ARC and FBO vertical — 210 tracked accounts, 38 current paying clients. <strong>5 current clients are exhibiting at SDC2026</strong> — warm walk-ups she owns. She has active warm conversations with Signature Aviation and Million Air, both on the floor. Atlantic Aviation is Lukewarm in her tracker — Casey/Clay lead that Tuesday, Abby carries it Wednesday–Thursday. <strong>The 5 win-back accounts are previous clients she is actively re-engaging</strong> — not do-not-contact. Lead with the prior relationship. Acknowledge the gap. Focus on what has changed.</p>
+        <p>Abby owns the ARC and FBO vertical — 210 accounts tracked across FBOs, vendors, and strategic partners, all exhibiting at SDC2026. <strong>38 are current paying clients</strong> (marked CLIENT). <strong>5 are win-back targets</strong> — previous clients she is actively re-engaging (marked WIN-BACK). Not do-not-contact: lead with the prior relationship, acknowledge the gap, focus on what has changed. She has active warm conversations with Signature Aviation and Million Air. Atlantic Aviation is Lukewarm in her tracker — Casey/Clay lead Tuesday, Abby carries Wednesday–Thursday.</p>
       </div>
 
-      <div class="green-rule"></div>
-
-      <div class="sl">Current Clients on the SDC Floor — Abby Owns These Walk-Ups</div>
-      <div class="g2">
-        <div class="ib" style="border-color:rgba(151,203,0,0.3);">
-          <div class="ib-label">Hot — Current Clients at SDC</div>
-          <ul>
-            <li><strong>Air Bound Aviation</strong> — Booth #850 · Current client · Retention + upsell conversation</li>
-            <li><strong>BGR Aviation (Bangor)</strong> — Booth #145 · Current client · Same row as X-1FBO — efficient pairing</li>
-            <li><strong>Castle &amp; Cooke Aviation</strong> — Booth #450 · Current client · Retention conversation</li>
-            <li><strong>Duncan Aviation</strong> — Booth #445 · Current client · One of the largest MRO networks in the US · High-value retention</li>
-            <li><strong>Hill Aircraft &amp; Leasing</strong> — Booth #721 · Current client · Abby relationship</li>
-          </ul>
+      <!-- LEGEND + FILTER + SEARCH -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-right:4px;">Filter:</span>
+          <button class="abby-filter active" data-filter="all" onclick="abbFilter(this,'all')">All (210)</button>
+          <button class="abby-filter" data-filter="Hot" onclick="abbFilter(this,'Hot')">🔥 Hot (42)</button>
+          <button class="abby-filter" data-filter="Warm" onclick="abbFilter(this,'Warm')">Warm (22)</button>
+          <button class="abby-filter" data-filter="Lukewarm" onclick="abbFilter(this,'Lukewarm')">Lukewarm (58)</button>
+          <button class="abby-filter" data-filter="Cold" onclick="abbFilter(this,'Cold')">Cold (61)</button>
+          <button class="abby-filter" data-filter="Other" onclick="abbFilter(this,'Other')">Other (27)</button>
+          <button class="abby-filter" data-filter="CLIENT" onclick="abbFilter(this,'CLIENT')">✓ Clients</button>
+          <button class="abby-filter" data-filter="WIN-BACK" onclick="abbFilter(this,'WIN-BACK')">⚠ Win-Back</button>
+          <button class="abby-filter" data-filter="NOTES" onclick="abbFilter(this,'NOTES')">💬 Has Notes</button>
         </div>
-        <div class="ib" style="border-color:rgba(71,130,211,0.3);">
-          <div class="ib-label" style="color:var(--blue);">Warm — Active Conversations at SDC</div>
-          <ul>
-            <li><strong>Signature Aviation</strong> — Booth #1001 · Warm · Active convo · Casey/Clay open Tuesday, Abby carries Wed–Thu · Derek DeCross (CCO) is the commercial target · ARC + FBO Marketing Package is the right product angle</li>
-            <li><strong>Million Air</strong> — Booths #338/339/341/342/669 · Warm · Active convo · Large FBO network across multiple locations · Abby primary owner · High ARC value · Move toward package proposal post-show</li>
-          </ul>
-        </div>
+        <input id="abbSearch" type="text" placeholder="Search accounts…" oninput="abbSearch()"
+          style="flex:1;min-width:180px;background:var(--navy-card);border:1px solid rgba(71,130,211,0.25);border-radius:var(--r);padding:7px 12px;color:var(--white);font-family:var(--font-b);font-size:14px;outline:none;">
       </div>
 
-      <div class="sl">Lukewarm at SDC — Interest Expressed, No Urgency</div>
-      <table class="priority-table" style="margin-bottom:14px;">
-        <thead><tr><th>Company</th><th>Booth</th><th>Status</th><th>Note</th></tr></thead>
-        <tbody>
-          <tr><td>Atlantic Aviation</td><td>#175</td><td><span class="badge b-unc">Lukewarm</span></td><td>Also T1 in Casey's brief (B2). Casey leads Tuesday. Abby carries Wed–Thu if warm handoff secured.</td></tr>
-          <tr><td>AEGFUELS, LLC</td><td>#1039</td><td><span class="badge b-unc">Lukewarm</span></td><td>Interest expressed. Abby walk-up when in that area.</td></tr>
-          <tr><td>Sheltair</td><td>#446</td><td><span class="badge b-unc">Lukewarm</span></td><td>Multi-location FBO network. Interest expressed. Near Castle &amp; Cooke.</td></tr>
-          <tr><td>West Star Aviation</td><td>#538</td><td><span class="badge b-unc">Lukewarm</span></td><td>Major MRO + FBO. Interest expressed. High potential.</td></tr>
-          <tr><td>Wilson Air Center</td><td>#750</td><td><span class="badge b-unc">Lukewarm</span></td><td>Interest expressed. Abby walk-up candidate.</td></tr>
-          <tr><td>Skyservice Business Aviation</td><td>#955</td><td><span class="badge b-unc">Lukewarm</span></td><td>Next door to Jeppesen ForeFlight (#954). Canadian FBO. Interest expressed.</td></tr>
-        </tbody>
-      </table>
-
-      <div class="sl">Cold at SDC — Bonus Targets If Capacity Allows</div>
-      <table class="priority-table" style="margin-bottom:14px;">
-        <thead><tr><th>Company</th><th>Booth</th><th>Note</th></tr></thead>
-        <tbody>
-          <tr><td>Galaxy FBO</td><td>#716</td><td>No convo started. On floor. Cold outreach if Abby has time.</td></tr>
-          <tr><td>Banyan Air Service</td><td>#550</td><td>No convo started. Fort Lauderdale-based. On floor.</td></tr>
-          <tr><td>Clay Lacy Aviation</td><td>#727</td><td>No convo started. Premium charter + FBO. High-value cold target.</td></tr>
-        </tbody>
-      </table>
-
-      <div class="sl">⚠ Win-Back Accounts — Previous Clients to Re-Engage</div>
-      <div class="dual-note" style="margin-bottom:12px;">
-        <p><strong>Approach note:</strong> These were GlobalAir.com clients who churned. Abby is actively working to win them back. Do not approach as new prospects. Open with the prior relationship: <em>"We know you've been with us before — I'd like to understand what happened and show you what's changed."</em> Focus on new ARC features, updated FBO listing capabilities, and Ramp Ramble audience growth since they left.</p>
-      </div>
-      <table class="priority-table" style="margin-bottom:14px;">
-        <thead><tr><th>Company</th><th>Status</th><th>At SDC?</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>⚠ Fargo Jet Center</td><td><span class="badge b-unc">Warm</span></td><td>Not on floor plan</td><td>Active win-back conversation in progress. Abby owns.</td></tr>
-          <tr><td>⚠ Premier Jet Center</td><td><span class="badge b-unc">Warm</span></td><td>Not on floor plan</td><td>Active win-back conversation in progress. Abby owns.</td></tr>
-          <tr><td>⚠ Bohlke Aviation</td><td><span class="badge b-unc">Lukewarm</span></td><td>Not on floor plan</td><td>Interest expressed. Prior client context is the door opener.</td></tr>
-          <tr><td>⚠ Jackson Jet Center</td><td><span class="badge b-unc">Lukewarm</span></td><td>Not on floor plan</td><td>Interest expressed. Prior client context is the door opener.</td></tr>
-          <tr><td>⚠ KaiserAir</td><td><span class="badge b-unc">Lukewarm</span></td><td>Not on floor plan</td><td>Interest expressed. Prior client context is the door opener.</td></tr>
-        </tbody>
-      </table>
-
-      <div class="sl">Strategic Accounts in Abby's Tracker — Also in Casey's Brief</div>
-      <div class="g3" style="margin-bottom:14px;">
-        <div class="ib">
-          <div class="ib-label">X-1FBO — Booth #145</div>
-          <ul>
-            <li>In Abby's "Other" category</li>
-            <li>Also Track A data flywheel target (Casey owns)</li>
-            <li>Abby's existing contact may be a warm door to George Reyes</li>
-            <li>Do not conflate ARC client relationship with data partnership ask — separate conversations</li>
-          </ul>
+      <!-- NOTE EDITOR (hidden until row clicked) -->
+      <div id="abbNoteEditor" style="display:none;background:linear-gradient(135deg,rgba(151,203,0,0.07),rgba(71,130,211,0.04));border:1px solid rgba(151,203,0,0.25);border-left:4px solid var(--green);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">
+          Adding note for: <span id="abbNoteCompany" style="color:var(--white);"></span>
         </div>
-        <div class="ib">
-          <div class="ib-label">Universal Weather — Booth #831</div>
-          <ul>
-            <li>In Abby's "Other" category</li>
-            <li>Also B1 Track B advertiser target (Casey owns Tuesday)</li>
-            <li>Abby awareness is useful context on the floor</li>
-            <li>Abby does not lead this conversation</li>
-          </ul>
-        </div>
-        <div class="ib">
-          <div class="ib-label">World Fuel — Booths #629/733/832</div>
-          <ul>
-            <li>In Abby's "Other" category</li>
-            <li>Also B8 Track B advertiser target (Casey's brief)</li>
-            <li>Aviation marketing owner still unknown — Abby may have an FBO-side contact</li>
-            <li>Check with Abby before floor approach for B8 conversation</li>
-          </ul>
+        <textarea id="abbNoteText" rows="3" placeholder="Floor notes, conversation summary, follow-up action, contact name…"
+          style="width:100%;background:rgba(0,0,0,0.2);border:1px solid rgba(71,130,211,0.3);border-radius:4px;padding:10px;color:var(--white);font-family:var(--font-b);font-size:14px;outline:none;resize:vertical;line-height:1.5;"></textarea>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button onclick="abbSaveNote()" style="background:var(--green);color:var(--navy);border:none;border-radius:var(--r);padding:7px 18px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Save Note</button>
+          <button onclick="abbClearNote()" style="background:transparent;color:var(--danger);border:1px solid rgba(220,50,50,0.3);border-radius:var(--r);padding:7px 18px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Clear Note</button>
+          <button onclick="document.getElementById('abbNoteEditor').style.display='none'" style="background:transparent;color:var(--muted);border:1px solid rgba(138,146,168,0.2);border-radius:var(--r);padding:7px 18px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Cancel</button>
         </div>
       </div>
 
-      <div class="sl">Abby's Wednesday–Thursday Priority Order</div>
-      <div class="approach"><ul>
-        <li><strong>Current client walk-ups:</strong> Air Bound (#850), BGR Aviation (#145), Castle &amp; Cooke (#450), Duncan Aviation (#445), Hill Aircraft (#721). Warm conversations — reinforce value, identify renewal timing, surface upsell opportunities.</li>
-        <li><strong>Signature Aviation (#1001):</strong> Casey/Clay open Tuesday. Abby carries Wednesday–Thursday. Derek DeCross (CCO) is the commercial target. ARC + FBO Marketing Package is the right product — 200+ Signature locations means significant ARC coverage value.</li>
-        <li><strong>Million Air (multiple booths):</strong> Warm conversation, Abby owns. Large multi-location network. Move toward a package proposal post-show. Visit at least two of their booths to establish visibility.</li>
-        <li><strong>Atlantic Aviation (#175):</strong> Casey leads Tuesday. If warm handoff secured, Abby follows up Wednesday. Lukewarm in her tracker — this show is the opportunity to move it to Warm.</li>
-        <li><strong>Lukewarm walk-ups:</strong> Sheltair (#446), West Star (#538), Wilson Air (#750), AEGFUELS (#1039), Skyservice (#955). Quick conversations — goal is a post-show email, not a close. Visit when passing their booth areas.</li>
-        <li><strong>Log everything same day.</strong> Tag all conversations SDC2026 in CRM before end of each evening. Do not let momentum go cold over the weekend.</li>
-      </ul></div>
+      <!-- ACCOUNT TABLE -->
+      <div style="overflow-x:auto;">
+        <table class="priority-table" id="abbTable">
+          <thead>
+            <tr>
+              <th style="width:35%">Company</th>
+              <th style="width:10%">Status</th>
+              <th style="width:10%">Type</th>
+              <th>Notes</th>
+              <th style="width:8%;text-align:center">Action</th>
+            </tr>
+          </thead>
+          <tbody id="abbTableBody"></tbody>
+        </table>
+      </div>
+      <div id="abbNoResults" style="display:none;text-align:center;padding:32px;color:var(--muted);font-size:14px;">No accounts match your filter.</div>
+
     </div>
+
+<style>
+.abby-filter {
+  background: rgba(71,130,211,0.08);
+  color: var(--muted-light);
+  border: 1px solid rgba(71,130,211,0.2);
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ease);
+  white-space: nowrap;
+}
+.abby-filter:hover { background: rgba(71,130,211,0.18); color: var(--white); }
+.abby-filter.active { background: var(--green); color: var(--navy); border-color: var(--green); }
+.abby-row { cursor: pointer; transition: background 0.15s; }
+.abby-row:hover td { background: rgba(151,203,0,0.05) !important; }
+.abby-row.has-note td { background: rgba(151,203,0,0.03); }
+.note-preview { font-size: 12px; color: var(--green); font-style: italic; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.note-empty { font-size: 12px; color: rgba(138,146,168,0.4); }
+.add-note-btn { background: transparent; border: 1px solid rgba(71,130,211,0.25); border-radius: 4px; color: var(--muted); font-size: 11px; padding: 3px 8px; cursor: pointer; font-family: var(--font-b); white-space: nowrap; }
+.add-note-btn:hover { border-color: var(--green); color: var(--green); }
+.add-note-btn.has-note { border-color: rgba(151,203,0,0.4); color: var(--green); }
+.badge-hot { background: rgba(151,203,0,0.15); color: var(--green); border: 1px solid rgba(151,203,0,0.3); }
+.badge-warm { background: rgba(71,130,211,0.15); color: var(--blue); border: 1px solid rgba(71,130,211,0.3); }
+.badge-luke { background: rgba(245,166,35,0.12); color: var(--warn); border: 1px solid rgba(245,166,35,0.3); }
+.badge-cold { background: rgba(138,146,168,0.1); color: var(--muted); border: 1px solid rgba(138,146,168,0.2); }
+.badge-client { background: rgba(21,87,36,0.4); color: #6fcf97; border: 1px solid rgba(111,207,151,0.3); }
+.badge-winback { background: rgba(220,50,50,0.12); color: var(--danger); border: 1px solid rgba(220,50,50,0.3); }
+</style>
+
+<script>
+// ── Abby pipeline data ──────────────────────────────────────────────
+const abbData = [{"id": "abby_0", "name": "Air Bound Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_1", "name": "BGR Aviation", "note": "Bangor Aviation Services", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_2", "name": "Bismarck Aero Center", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_3", "name": "Blue Line Aviation LLC", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_4", "name": "Business Jet", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_5", "name": "Capital Jet Center", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_6", "name": "Castle & Cooke Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_7", "name": "Classic Aircraft Service", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_8", "name": "Concord-Padgett Regional Airport", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_9", "name": "Desert Jet LLC", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_10", "name": "Duncan Aviation, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_11", "name": "Gary Jet Center, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_12", "name": "Gill Aviation-David Wayne Hooks Airport", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_13", "name": "Global Aviation, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_14", "name": "Hill Aircraft & Leasing Corp.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_15", "name": "Hollywood Burbank Jet Center", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_16", "name": "Holman Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_17", "name": "Hunt PanAm Aviation, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_18", "name": "International Flight Center, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_19", "name": "Jet Air Group", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_20", "name": "Jet Air, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_21", "name": "Jet Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_22", "name": "Jet Nassau", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_23", "name": "Jet Set FBO", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_24", "name": "Lee's Summit Municipal Airport", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_25", "name": "McCreery Aviation Company, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_26", "name": "McKinney Air Center", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_27", "name": "Northgate Aviation", "note": "", "status": "Hot", "type": "", "crossover": ""}, {"id": "abby_28", "name": "Odyssey Aviation Bahamas", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_29", "name": "Paragon Aviation Group", "note": "", "status": "Hot", "type": "", "crossover": ""}, {"id": "abby_30", "name": "Pentastar Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_31", "name": "Rise Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_32", "name": "Sky Bright/SBI Aircraft Services Laconia LLC", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_33", "name": "SkyShare", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_34", "name": "Southern Sky Aviation KECP", "note": "", "status": "Hot", "type": "", "crossover": ""}, {"id": "abby_35", "name": "Southern Sky Aviation KPQL LLC", "note": "", "status": "Hot", "type": "", "crossover": ""}, {"id": "abby_36", "name": "Sweetwater Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_37", "name": "Texas Gulf Coast Regional Airport", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_38", "name": "Texas Jet, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_39", "name": "Velocity FBO Network", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_40", "name": "Vesper Aviation", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_41", "name": "Western Aircraft, Inc.", "note": "", "status": "Hot", "type": "CLIENT", "crossover": ""}, {"id": "abby_42", "name": "Avflight Corporation", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_43", "name": "Base Operations at Page Field", "note": "KFMY", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_44", "name": "Bessemer National Airport", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_45", "name": "Castle Aviation, Inc.", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_46", "name": "Cerulean General Aviation", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_47", "name": "DuPage Flight Center", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_48", "name": "Fargo Jet Center", "note": "Previous client", "status": "Warm", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_49", "name": "Flight Solutions, Inc.", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_50", "name": "Flying Tigers Aviation", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_51", "name": "Fort Wayne Aero Center", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_52", "name": "Grand Aire, Inc.", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_53", "name": "Jet Access", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_54", "name": "Million Air", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_55", "name": "Million Air Dallas", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_56", "name": "Million Air powered by Freeman Holdings Group", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_57", "name": "Million Air Tucson", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_58", "name": "Modern Aviation, Inc.", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_59", "name": "Premier Jet Center", "note": "Previous client", "status": "Warm", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_60", "name": "Riverside Jet Center", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_61", "name": "Signature Aviation", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_62", "name": "Sonoma Aviation", "note": "tied to Carlsbad Jet somehow", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_63", "name": "Temple Executive Air Center", "note": "", "status": "Warm", "type": "", "crossover": ""}, {"id": "abby_64", "name": "AEGFUELS, LLC", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_65", "name": "Aero Centers", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_66", "name": "Ambassador Jet Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_67", "name": "APP Jet Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_68", "name": "Atlantic Aviation Corporation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_69", "name": "Axis Air", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_70", "name": "B. Coleman Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_71", "name": "Bohlke Aviation", "note": "Previous client", "status": "Lukewarm", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_72", "name": "Chantilly Air, Inc.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_73", "name": "Crownair Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_74", "name": "Eagle Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_75", "name": "Eagle Aviation, LLC.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_76", "name": "Easton Airport", "note": "Easton Jet Service is a client", "status": "Lukewarm", "type": "CLIENT", "crossover": ""}, {"id": "abby_77", "name": "Embassair", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_78", "name": "Flightways Columbus", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_79", "name": "Gateway Aviation Services", "note": "Ramp Ramble contact", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_80", "name": "Henriksen Jet Centers", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_81", "name": "Jackson Hole Flight Services", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_82", "name": "Jackson Jet Center", "note": "Previous client", "status": "Lukewarm", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_83", "name": "jetCenters of Colorado", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_84", "name": "JETS FBO Network", "note": "MRK Aviation - Jet Fuel Strategies", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_85", "name": "KaiserAir, Inc.", "note": "Previous client", "status": "Lukewarm", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_86", "name": "Lane Aviation Corp.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_87", "name": "Lehigh Valley Aviation Services", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_88", "name": "Loyds Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_89", "name": "MAC Air Group", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_90", "name": "Maven by Midfield", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_91", "name": "Maverick Air Center, LLC", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_92", "name": "Monmouth Jet Center at Monmouth Executive Airport", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_93", "name": "Moore County Airport", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_94", "name": "Morristown Airport", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_95", "name": "Naples Airport Authority", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_96", "name": "Northeast Air", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_97", "name": "Port City Air, Inc.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_98", "name": "Porter County Municipal Airport Authority", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_99", "name": "Premier Private Jets", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_100", "name": "Propeller Aero Services", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_101", "name": "Pryor Flight Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_102", "name": "Sheboygan County Memorial International Airport - Lake Breeze Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_103", "name": "Sheltair", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_104", "name": "Skyborne", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_105", "name": "Skyservice Business Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_106", "name": "StanCraft Jet Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_107", "name": "Stein's Aircraft Services LLC", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_108", "name": "Sweet Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_109", "name": "Thunderbird Aviation, Inc.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_110", "name": "Tri-City Aviation, Inc.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_111", "name": "Tucson Jet Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_112", "name": "UC Regional Airport", "note": "SRB", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_113", "name": "United States Aviation Co.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_114", "name": "Victoria Jet Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_115", "name": "W Aviation LLC", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_116", "name": "West Star Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_117", "name": "Wilde Air LLC", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_118", "name": "Wilson Air Center", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_119", "name": "Winchester Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_120", "name": "Yelvington Jet Aviation, Inc.", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_121", "name": "Yingling Aviation", "note": "", "status": "Lukewarm", "type": "", "crossover": ""}, {"id": "abby_122", "name": "ACI Jet - FBOs", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_123", "name": "AirQuest Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_124", "name": "Alliance Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_125", "name": "Alliance Aviation Services", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_126", "name": "Appleton Flight Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_127", "name": "Auburn Lewiston Municipal Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_128", "name": "Banyan Air Service", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_129", "name": "Big Island Jet Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_130", "name": "Big Sky Aviation, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_131", "name": "Business Aviation Ltd.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_132", "name": "Clay Lacy Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_133", "name": "Coast Air Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_134", "name": "Colorado Air and Space Port", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_135", "name": "Contour Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_136", "name": "Corporate Air Center LLC", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_137", "name": "Cutter Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_138", "name": "Dallas Executive Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_139", "name": "Del Monte Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_140", "name": "Dunes Air", "note": "FBO-Palm Desert", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_141", "name": "FBO fairbanks", "note": "not in ARC", "status": "Cold", "type": "WIN-BACK", "crossover": ""}, {"id": "abby_142", "name": "Flightline First FBO & Charter", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_143", "name": "Five Rivers Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_144", "name": "Four Rivers Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_145", "name": "FoxTrot Aviation Services LLC", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_146", "name": "Galaxy FBO", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_147", "name": "GateOne", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_148", "name": "Gulf Air Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_149", "name": "Gulf Aviation, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_150", "name": "Haven ASG, LLC", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_151", "name": "Heritage Aviation, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_152", "name": "Hickory Regional Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_153", "name": "Infinity Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_154", "name": "Kansas City Downtown Airport - Wheeler Field", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_155", "name": "Kansas Jet Center", "note": "KMHK", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_156", "name": "Legend AeroServe", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_157", "name": "Lyddon Aero Center, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_158", "name": "McClellan Jet Services", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_159", "name": "Mid Delta Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_160", "name": "Middle Georgia Regional Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_161", "name": "Middletown Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_162", "name": "Mid-Ohio Valley Regional Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_163", "name": "Naples Jet Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_164", "name": "National Jets", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_165", "name": "Orlando Executive Airport - ORL", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_166", "name": "Overland Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_167", "name": "Panola Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_168", "name": "Provo Air Center, Ltd.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_169", "name": "Rickenbacker Aviation Columbus Regional Airport Authority", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_170", "name": "Scottsdale Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_171", "name": "Sedona Oak - Creek Airport Authority", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_172", "name": "Spring City Aviation, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_173", "name": "Standard Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_174", "name": "Stellar Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_175", "name": "Sun Valley Aviation, Inc.", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_176", "name": "Tas Aviation LLC", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_177", "name": "Teterboro Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_178", "name": "Teton Aviation Center", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_179", "name": "The Cleveland Jet Center, LLC", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_180", "name": "The Ohio State University Airport", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_181", "name": "Tupelo Aviation Unlimited", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_182", "name": "Vantage Aviation", "note": "", "status": "Cold", "type": "", "crossover": ""}, {"id": "abby_183", "name": "National Air Transportation Association", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_184", "name": "Airpeggio", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_185", "name": "Atlas FBO Software", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_186", "name": "Avfuel Corporation", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_187", "name": "Corporate Aircraft Association", "note": "CAA", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_188", "name": "Corporate Angel Network, Inc.", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_189", "name": "Enterprise & National", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_190", "name": "Everest Fuel", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_191", "name": "FuelerLinx", "note": "", "status": "Other", "type": "", "crossover": "Track A — Data Partner (A3)"}, {"id": "abby_192", "name": "Go Rentals Elite Car Rental Provider", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_193", "name": "Guardian Jet LLC", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_194", "name": "Hertz Corporation", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_195", "name": "International Business Aviation Council, Ltd.", "note": "IBAC", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_196", "name": "Oshkosh AeroTech", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_197", "name": "Phillips 66 Aviation", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_198", "name": "Polaris Aero, LLC", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_199", "name": "Short Hills Aviation Services", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_200", "name": "SkyVector", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_201", "name": "TITAN Aerospace Insurance LLC", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_202", "name": "Titan Aviation Fuels", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_203", "name": "Total FBO / FBO ONE", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_204", "name": "Universal Weather and Aviation", "note": "", "status": "Other", "type": "", "crossover": "Track B — Advertiser (B1)"}, {"id": "abby_205", "name": "Women in Aviation International", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_206", "name": "Women in Corporate Aviation", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_207", "name": "World Fuel - A World Kinect Company", "note": "", "status": "Other", "type": "", "crossover": "Track B — Advertiser (B8)"}, {"id": "abby_208", "name": "WYVERN Ltd.", "note": "", "status": "Other", "type": "", "crossover": ""}, {"id": "abby_209", "name": "X-1FBO", "note": "", "status": "Other", "type": "", "crossover": "Track A — Data Partner (A1)"}];
+
+// ── In-memory notes storage ─────────────────────────────────────────
+const abbNotes = {};
+let abbActiveId = null;
+let abbActiveFilter = 'all';
+let abbSearchTerm = '';
+
+// ── Render table ────────────────────────────────────────────────────
+function abbRender() {
+  const tbody = document.getElementById('abbTableBody');
+  if (!tbody) return;
+  const filtered = abbData.filter(a => {
+    const matchFilter = abbActiveFilter === 'all' ? true
+      : abbActiveFilter === 'CLIENT'   ? a.type === 'CLIENT'
+      : abbActiveFilter === 'WIN-BACK' ? a.type === 'WIN-BACK'
+      : abbActiveFilter === 'NOTES'    ? !!abbNotes[a.id]
+      : abbActiveFilter === 'CROSSOVER'? !!a.crossover
+      : a.status === abbActiveFilter;
+    const term = abbSearchTerm.toLowerCase();
+    const matchSearch = !term || a.name.toLowerCase().includes(term) || (a.note && a.note.toLowerCase().includes(term));
+    return matchFilter && matchSearch;
+  });
+
+  document.getElementById('abbNoResults').style.display = filtered.length === 0 ? 'block' : 'none';
+  document.getElementById('abbTable').style.display = filtered.length === 0 ? 'none' : '';
+
+  tbody.innerHTML = filtered.map(a => {
+    const note = abbNotes[a.id] || '';
+    const hasNote = !!note;
+    const statusClass = {Hot:'badge-hot',Warm:'badge-warm',Lukewarm:'badge-luke',Cold:'badge-cold'}[a.status] || 'badge-cold';
+    const typeHtml = a.type === 'CLIENT'
+      ? `<span class="badge badge-client">&#10003; Client</span>`
+      : a.type === 'WIN-BACK'
+      ? `<span class="badge badge-winback">&#9888; Win-Back</span>`
+      : `<span style="color:var(--muted);font-size:12px;">&mdash;</span>`;
+    const crossoverHtml = a.crossover
+      ? `<br><span style="font-size:11px;color:var(--blue);font-weight:600;">&#8651; ${escHtml(a.crossover)}</span>`
+      : '';
+    const noteTd = hasNote
+      ? `<span class="note-preview">${escHtml(note)}</span>`
+      : `<span class="note-empty">Click to add note</span>`;
+    const btnLabel = hasNote ? '&#9998; Edit' : '+ Note';
+    const rowClass = 'abby-row' + (hasNote ? ' has-note' : '');
+
+    return `<tr class="${rowClass}" data-abby-id="${a.id}">
+      <td><strong style="color:var(--white)">${escHtml(a.name)}</strong>${a.note ? `<br><span style="font-size:12px;color:var(--muted)">${escHtml(a.note)}</span>` : ''}${crossoverHtml}</td>
+      <td><span class="badge ${statusClass}">${a.status}</span></td>
+      <td>${typeHtml}</td>
+      <td>${noteTd}</td>
+      <td style="text-align:center"><button class="add-note-btn${hasNote ? ' has-note' : ''}" data-abby-btn="${a.id}">${btnLabel}</button></td>
+    </tr>`;
+  }).join('');
+
+  // Attach click handlers via event delegation (avoids all inline onclick quote issues)
+  tbody.onclick = function(e) {
+    const btn = e.target.closest('[data-abby-btn]');
+    if (btn) { e.stopPropagation(); abbOpenNote(btn.dataset.abbyBtn); return; }
+    const row = e.target.closest('[data-abby-id]');
+    if (row) abbOpenNote(row.dataset.abbyId);
+  };
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Filter buttons ──────────────────────────────────────────────────
+function abbFilter(btn, filter) {
+  document.querySelectorAll('.abby-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  abbActiveFilter = filter;
+  abbRender();
+}
+
+// ── Search ──────────────────────────────────────────────────────────
+function abbSearch() {
+  abbSearchTerm = document.getElementById('abbSearch').value;
+  abbRender();
+}
+
+// ── Note editor ─────────────────────────────────────────────────────
+function abbOpenNote(id) {
+  abbActiveId = id;
+  const account = abbData.find(a => a.id === id);
+  document.getElementById('abbNoteCompany').textContent = account.name;
+  document.getElementById('abbNoteText').value = abbNotes[id] || '';
+  document.getElementById('abbNoteEditor').style.display = 'block';
+  document.getElementById('abbNoteEditor').scrollIntoView({behavior:'smooth', block:'nearest'});
+  document.getElementById('abbNoteText').focus();
+}
+
+function abbSaveNote() {
+  const text = document.getElementById('abbNoteText').value.trim();
+  if (text) {
+    abbNotes[abbActiveId] = text;
+  } else {
+    delete abbNotes[abbActiveId];
+  }
+  document.getElementById('abbNoteEditor').style.display = 'none';
+  abbRender();
+}
+
+function abbClearNote() {
+  document.getElementById('abbNoteText').value = '';
+  delete abbNotes[abbActiveId];
+  document.getElementById('abbNoteEditor').style.display = 'none';
+  abbRender();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────
+// abbRender() is called from the main show() function below
+</script>
 
   </div><!-- end content -->
 </div><!-- end tab-shell -->
@@ -2821,6 +2918,8 @@ function show(id) {
   document.querySelector('.content').scrollTop = 0;
   // Close sidebar on mobile after selection
   if (window.innerWidth < 768) closeSidebar();
+  // Render Abby table when that tab is opened
+  if (id === 'abby' && typeof abbRender === 'function') abbRender();
 }
 
 function toggleSidebar() {
@@ -2851,6 +2950,11 @@ document.querySelectorAll('.pt-link').forEach(link => {
 // Keyboard: Escape closes sidebar on mobile
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeSidebar();
+});
+
+// Render Abby table on load if that tab is already active
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof abbRender === 'function') abbRender();
 });
 </script>
 </body>
